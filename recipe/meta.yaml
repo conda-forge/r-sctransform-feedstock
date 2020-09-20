@@ -34,7 +34,7 @@ requirements:
     - r-base
     - r-mass
     - r-matrix
-    - r-rcpp
+    - r-rcpp >=0.11.0
     - r-rcppeigen
     - r-future
     - r-future.apply
@@ -46,7 +46,7 @@ requirements:
     - {{ native }}gcc-libs         # [win]
     - r-mass
     - r-matrix
-    - r-rcpp
+    - r-rcpp >=0.11.0
     - r-rcppeigen
     - r-future
     - r-future.apply
@@ -61,11 +61,13 @@ test:
 
 about:
   home: https://github.com/ChristophH/sctransform
-  license: GPL-3
+  license: GPL-3.0-only
   summary: A normalization method for single-cell UMI count data using a  variance stabilizing transformation. The transformation is based on a  negative binomial regression model with regularized parameters. As part of the same regression framework, this package also provides functions for batch correction, and data correction.
     See Hafemeister and Satija 2019  <doi:10.1101/576827> for more details.
   license_family: GPL3
-  license_file: LICENSE
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
+    - LICENSE
 
 extra:
   recipe-maintainers:
