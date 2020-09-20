@@ -1,4 +1,4 @@
-{% set version = "0.2.1" %}
+{% set version = "0.3" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/sctransform_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/sctransform/sctransform_{{ version }}.tar.gz
-  sha256: d6430a81a66c93da770b1a7c55344df42187321038b4eee80b7066cdd8a7631f
+  sha256: 03672b0e1acddecef42630407aa36e0e6bb6e8786e6e66f93d856f07dfefd2ef
 
 build:
-  merge_build_host: True  # [win]
-  number: 1
+  merge_build_host: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -62,11 +62,8 @@ test:
 about:
   home: https://github.com/ChristophH/sctransform
   license: GPL-3
-  summary: A normalization method for single-cell UMI count data using a  variance stabilizing
-    transformation. The transformation is based on a  negative binomial regression model
-    with regularized parameters. As part of the same regression framework, this package
-    also provides functions for batch correction, and data correction. See Hafemeister
-    and Satija 2019  <doi:10.1101/576827> for more details.
+  summary: A normalization method for single-cell UMI count data using a  variance stabilizing transformation. The transformation is based on a  negative binomial regression model with regularized parameters. As part of the same regression framework, this package also provides functions for batch correction, and data correction.
+    See Hafemeister and Satija 2019  <doi:10.1101/576827> for more details.
   license_family: GPL3
   license_file: LICENSE
 
