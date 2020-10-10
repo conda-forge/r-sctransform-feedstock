@@ -5,11 +5,9 @@ Home: https://github.com/ChristophH/sctransform
 
 Package license: GPL-3.0-only
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-sctransform-feedstock/blob/master/LICENSE.txt)
 
 Summary: A normalization method for single-cell UMI count data using a  variance stabilizing transformation. The transformation is based on a  negative binomial regression model with regularized parameters. As part of the same regression framework, this package also provides functions for batch correction, and data correction. See Hafemeister and Satija 2019  <doi:10.1101/576827> for more details.
-
-
 
 Current build status
 ====================
