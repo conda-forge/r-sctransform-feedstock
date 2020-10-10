@@ -1,4 +1,4 @@
-{% set version = "0.3" %}
+{% set version = "0.3.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/sctransform_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/sctransform/sctransform_{{ version }}.tar.gz
-  sha256: 03672b0e1acddecef42630407aa36e0e6bb6e8786e6e66f93d856f07dfefd2ef
+  sha256: 8a772dec0030b4e326f1dad62c3bc6a03fbf53f48897be44953332fa1b8a162d
 
 build:
   merge_build_host: true  # [win]
@@ -35,11 +35,12 @@ requirements:
     - r-mass
     - r-matrix
     - r-rcpp >=0.11.0
-    - r-rcppeigen
+    - r-rcpparmadillo
     - r-future
     - r-future.apply
     - r-ggplot2
     - r-gridextra
+    - r-matrixstats
     - r-reshape2
   run:
     - r-base
@@ -47,11 +48,12 @@ requirements:
     - r-mass
     - r-matrix
     - r-rcpp >=0.11.0
-    - r-rcppeigen
+    - r-rcpparmadillo
     - r-future
     - r-future.apply
     - r-ggplot2
     - r-gridextra
+    - r-matrixstats
     - r-reshape2
 
 test:
