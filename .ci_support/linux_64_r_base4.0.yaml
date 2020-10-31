@@ -18,6 +18,8 @@ docker_image:
 - condaforge/linux-anvil-comp7
 libblas:
 - 3.8 *netlib
+liblapack:
+- 3.8 *netlib
 mkl:
 - '2019'
 pin_run_as_build:
