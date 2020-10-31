@@ -42,7 +42,7 @@ requirements:
     - r-gridextra
     - r-matrixstats
     - r-reshape2
-    - blas
+    - libblas
     - mkl
   run:
     - r-base
