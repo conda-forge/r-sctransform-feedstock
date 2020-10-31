@@ -43,6 +43,7 @@ requirements:
     - r-matrixstats
     - r-reshape2
     - libblas
+    - liblapack
     - mkl
   run:
     - r-base
