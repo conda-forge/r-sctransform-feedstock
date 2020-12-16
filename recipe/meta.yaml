@@ -1,4 +1,4 @@
-{% set version = "0.3.1" %}
+{% set version = "0.3.2" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/sctransform_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/sctransform/sctransform_{{ version }}.tar.gz
-  sha256: 8a772dec0030b4e326f1dad62c3bc6a03fbf53f48897be44953332fa1b8a162d
+  sha256: 5dbb0a045e514c19f51bbe11c2dba0b72dca1942d6eb044c36b0538b443475dc
 
 build:
   merge_build_host: true  # [win]
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
