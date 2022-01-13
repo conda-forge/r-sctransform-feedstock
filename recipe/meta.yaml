@@ -1,4 +1,4 @@
-{% set version = "0.3.2" %}
+{% set version = "0.3.3" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,38 +10,42 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/sctransform_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/sctransform/sctransform_{{ version }}.tar.gz
-  sha256: 5dbb0a045e514c19f51bbe11c2dba0b72dca1942d6eb044c36b0538b443475dc
+  sha256: 83af125c40f211e1ddae5098f88766aea1453c02ae98486081f3efadb3620b2b
 
 build:
   merge_build_host: true  # [win]
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-    - {{ compiler('c') }}        # [not win]
-    - {{ compiler('cxx') }}      # [not win]
+    - {{ compiler('c') }}              # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
-    - {{ compiler('m2w64_cxx') }}        # [win]
+    - {{ compiler('cxx') }}            # [not win]
+    - {{ compiler('m2w64_cxx') }}      # [win]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}make
     - {{ posix }}sed               # [win]
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
     - r-mass
     - r-matrix
     - r-rcpp >=0.11.0
     - r-rcpparmadillo
+    - r-dplyr
     - r-future
     - r-future.apply
     - r-ggplot2
     - r-gridextra
+    - r-magrittr
     - r-matrixstats
     - r-reshape2
+    - r-rlang
     - libblas
     - liblapack
     - mkl
@@ -52,12 +56,15 @@ requirements:
     - r-matrix
     - r-rcpp >=0.11.0
     - r-rcpparmadillo
+    - r-dplyr
     - r-future
     - r-future.apply
     - r-ggplot2
     - r-gridextra
+    - r-magrittr
     - r-matrixstats
     - r-reshape2
+    - r-rlang
 
 test:
   commands:
