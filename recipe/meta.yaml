@@ -46,6 +46,9 @@ requirements:
     - r-matrixstats
     - r-reshape2
     - r-rlang
+    - libblas
+    - liblapack
+    - mkl
   run:
     - r-base
     - {{ native }}gcc-libs         # [win]
