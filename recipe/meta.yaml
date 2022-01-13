@@ -21,30 +21,31 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}        # [not win]
-    - {{ compiler('cxx') }}      # [not win]
+    - {{ compiler('c') }}              # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
-    - {{ compiler('m2w64_cxx') }}        # [win]
+    - {{ compiler('cxx') }}            # [not win]
+    - {{ compiler('m2w64_cxx') }}      # [win]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}make
     - {{ posix }}sed               # [win]
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
     - r-mass
     - r-matrix
     - r-rcpp >=0.11.0
     - r-rcpparmadillo
+    - r-dplyr
     - r-future
     - r-future.apply
     - r-ggplot2
     - r-gridextra
+    - r-magrittr
     - r-matrixstats
     - r-reshape2
-    - libblas
-    - liblapack
-    - mkl
+    - r-rlang
   run:
     - r-base
     - {{ native }}gcc-libs         # [win]
@@ -52,12 +53,15 @@ requirements:
     - r-matrix
     - r-rcpp >=0.11.0
     - r-rcpparmadillo
+    - r-dplyr
     - r-future
     - r-future.apply
     - r-ggplot2
     - r-gridextra
+    - r-magrittr
     - r-matrixstats
     - r-reshape2
+    - r-rlang
 
 test:
   commands:
