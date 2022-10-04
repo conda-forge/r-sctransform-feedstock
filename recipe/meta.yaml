@@ -62,7 +62,6 @@ requirements:
     - r-rlang
     - libblas
     - liblapack
-    - mkl
   run:
     - r-base
     - {{ native }}gcc-libs         # [win]
