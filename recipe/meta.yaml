@@ -23,7 +23,7 @@ requirements:
   build:
     - cross-r-base {{ r_base }}  # [build_platform != target_platform]
     - r-future                   # [build_platform != target_platform]
-    - r-rcpp                     # [build_platform != target_platform]
+    - r-rcpp >=0.11.0            # [build_platform != target_platform]
     - r-magrittr                 # [build_platform != target_platform]
     - r-dplyr                    # [build_platform != target_platform]
     - r-matrixstats              # [build_platform != target_platform]
@@ -32,7 +32,7 @@ requirements:
     - r-future.apply             # [build_platform != target_platform]
     - r-mass                     # [build_platform != target_platform]
     - r-gridextra                # [build_platform != target_platform]
-    - r-matrix                   # [build_platform != target_platform]
+    - r-matrix >=1.5.0           # [build_platform != target_platform]
     - r-reshape2                 # [build_platform != target_platform]
     - r-rlang                    # [build_platform != target_platform]
     - {{ compiler('c') }}              # [not win]
@@ -47,7 +47,7 @@ requirements:
   host:
     - r-base
     - r-mass
-    - r-matrix
+    - r-matrix >=1.5.0
     - r-rcpp >=0.11.0
     - r-rcpparmadillo
     - r-dplyr
@@ -65,7 +65,7 @@ requirements:
     - r-base
     - {{ native }}gcc-libs         # [win]
     - r-mass
-    - r-matrix
+    - r-matrix >=1.5.0
     - r-rcpp >=0.11.0
     - r-rcpparmadillo
     - r-dplyr
@@ -84,7 +84,7 @@ test:
     - "\"%R%\" -e \"library('sctransform')\""  # [win]
 
 about:
-  home: https://github.com/ChristophH/sctransform
+  home: https://github.com/satijalab/sctransform
   license: GPL-3.0-only
   summary: A normalization method for single-cell UMI count data using a  variance stabilizing transformation. The transformation is based on a  negative binomial regression model with regularized parameters. As part of the same regression framework, this package also provides functions for batch correction, and data correction.
     See Hafemeister and Satija 2019  <doi:10.1101/576827> for more details.
