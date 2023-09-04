@@ -7,7 +7,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-sctransform-f
 About r-sctransform
 -------------------
 
-Home: https://github.com/ChristophH/sctransform
+Home: https://github.com/satijalab/sctransform
 
 Package license: GPL-3.0-only
 
@@ -16,7 +16,7 @@ Summary: A normalization method for single-cell UMI count data using a  variance
 About r-sctransform
 -------------------
 
-Home: https://github.com/ChristophH/sctransform
+Home: https://github.com/satijalab/sctransform
 
 Package license: GPL-3.0-only
 
