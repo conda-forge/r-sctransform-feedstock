@@ -1,4 +1,4 @@
-{% set version = "0.4.1" %}
+{% set version = "0.4.2" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/sctransform_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/sctransform/sctransform_{{ version }}.tar.gz
-  sha256: 5f6be7f8be543e4c32c8007207b603a750881459370b7bb5afd63e8c8fabf171
+  sha256: 56180aebc7f91345e63210df76541681d3673a59d1a388523dc7ba69886ba0d0
 
 build:
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
