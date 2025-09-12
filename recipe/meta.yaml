@@ -12,7 +12,7 @@ source:
   sha256: 56180aebc7f91345e63210df76541681d3673a59d1a388523dc7ba69886ba0d0
 
 build:
-  number: 1
+  number: 2
   rpaths:
     - lib/R/lib/
     - lib/
@@ -43,7 +43,7 @@ requirements:
     - {{ stdlib("m2w64_c") }}      # [win]
     - {{ compiler('cxx') }}        # [not win]
     - {{ compiler('m2w64_cxx') }}  # [win]
-    - {{ compiler('fortran') }}    # [osx and arm64]
+    - {{ compiler("fortran") }}
     - {{ posix }}filesystem        # [win]
     - {{ posix }}make
     - {{ posix }}sed               # [win]
